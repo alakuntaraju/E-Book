@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Edit Book Information</h2>
+<form th:action="@{/Book/add}" method="post" enctype="multipart/form-data">
+	    <input type="hidden" name="id" th:value="${book.id}">
+		<div>
+			Title : <input type="text" name="title" th:value="${book.title}">
+		</div>
+		<div>
+			Author : <input type="text" name="author" th:value="${book.author}">
+		</div>
+		<div>
+			Publisher: <input type="text" name="publisher" th:value="${book.publisher}">
+		</div>
+		<div>
+			Publication Date : <input type="date" name="publicationDate" th:value="${book.publicationDate}">
+		</div>
+		<div>
+		Language :<select name="language">
+				<option value="English" th:selected="(${book.language}=='English')">English</option>
+				<option value="Spanish" th:selected="(${book.language}=='Spanish')">Spanish</option>
+			</select>
+		</div>
+
+
+		<div>
+			Category :<select name="category">
+				<option value="Management" th:selected="(${book.category}=='Management')" >Management</option>
+				<option value="Fiction" th:selected="(${book.category}=='Fiction')">Fiction</option>
+				<option value="Engineering" th:selected="(${book.category}=='Engineering')">Engineering</option>
+				<option value="Programming" th:selected="(${book.category}=='Programming')">Programming</option>
+				<option value="Arts" th:selected="(${book.category}=='Arts')">Arts</option>
+			</select>
+		</div>
+
+		<div>
+			Pages : <input type="text" name="numberOfPages" th:value="${book.numberOfPages}">
+		</div>
+
+		<div>
+			Format : <select name="format">
+				<option value="Paperback" th:selected="(${book.format}=='Paperback')">Paperback</option>
+				<option value="Hardcover" th:selected="(${book.format}=='Hardcover')">Hardcover</option>
+			</select>
+		</div>
+
+
+		<div>
+			ISBN : <input type="text" name="isbn" th:value="${book.isbn}">
+		</div>
+
+		<div>
+			Shipping Weight : <input type="text" name="shippingWeight" th:value="${book.shippingWeight}">
+		</div>
+		<div>
+			List Price : <input type="text" name="listPrice" th:value="${book.listPrice}">
+		</div>
+		<div>
+			Our Price : <input type="text" name="ourPrice" th:value="${book.ourPrice}">
+		</div>
+		<div>
+			Number in stock : <input type="text" name="inStockNumber" th:value="${book.inStockNumber}">
+		</div>
+		<div>
+			Status : <input type="radio" name="active" checked = "${book.active}" value="true"> Active <input
+				type="radio" name="active" value="false"> In Active
+		</div>
+
+		<div>
+			Description : <input type="text" name="description" th:value="${book.description}">
+		</div>
+		<div>Upload book image</div>
+		<input type="submit"><input type="reset">
+	</form>
+
+</body>
+</html>
