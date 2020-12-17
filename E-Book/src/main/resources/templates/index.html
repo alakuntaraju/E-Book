@@ -9,31 +9,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand">E-Book</a>
-      <a class="navbar-brand">Home</a>
-    </div>
-    <ul class="nav navbar-nav">
-       <li><a href="/Book/add">Add Book</a></li>
-          <li><a href="/Book/BookList">BookList</a></li>
-<!--           <li><a href="/Book/bookInfo">BookInfo</a></li> -->
-        </ul>
-      
-    
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
-
-
-<!-- <h2>Admin Portal</h2> -->
-<!-- 	<a href="/Book/add">Add Book</a> -->
-<!-- 	<a href="/Book/BookList">All Books</a> -->
+<div th:replace="fragments/header :: header"></div>
 </body>
 </html>
