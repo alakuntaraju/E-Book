@@ -26,7 +26,10 @@ public class SbSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
-		http.authorizeRequests().antMatchers("/","Book/BookList").permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login")
+		http
+		.csrf() 
+		.disable()
+		.authorizeRequests().antMatchers("/","Book/BookList","swagger-ui.html").permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login")
         .failureUrl("/login?error").permitAll().and()
         .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 		.logoutSuccessUrl("/?logout");

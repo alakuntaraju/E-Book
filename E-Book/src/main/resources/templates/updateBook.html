@@ -20,23 +20,25 @@
 		<hr />
 		<form th:action="@{/Book/add}" method="post"
 			enctype="multipart/form-data">
+<!-- 			<form th:action="/Book/add" method="post" -->
+<!-- 			enctype="multipart/form-data"> -->
 			<input type="hidden" name="id" th:value="${book.id}">
 			<div class="form-group">
 				<label class="control-label col-sm-2">Title :</label> <input
-					type="text" name="title" th:value="${book.title}" required>
+					type="text" name="title" th:value="${book.title}">
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Author :</label> <input
-					type="text" name="author" th:value="${book.author}" required>
+					type="text" name="author" th:value="${book.author}">
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Publisher:</label> <input
-					type="text" name="publisher" th:value="${book.publisher}" required>
+					type="text" name="publisher" th:value="${book.publisher}">
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Publication Date :</label> <input
 					type="date" name="publicationDate"
-					th:value="${book.publicationDate}"required>
+					th:value="${book.publicationDate}">
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Language :</label> <select
@@ -60,7 +62,7 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Pages :</label> <input
-					type="text" name="numberOfPages" th:value="${book.numberOfPages}" required>
+					type="text" name="numberOfPages" th:value="${book.numberOfPages}">
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Format :</label> <select
@@ -73,23 +75,23 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">ISBN :</label> <input
-					type="text" name="isbn" th:value="${book.isbn}" required>
+					type="text" name="isbn" th:value="${book.isbn}">
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Shipping Weight :</label> <input
-					type="text" name="shippingWeight" th:value="${book.shippingWeight}" required>
+					type="text" name="shippingWeight" th:value="${book.shippingWeight}">
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">List Price :</label> <input
-					type="text" name="listPrice" th:value="${book.listPrice}" required>
+					type="text" name="listPrice" th:value="${book.listPrice}">
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Our Price :</label> <input
-					type="text" name="ourPrice" th:value="${book.ourPrice}" required>
+					type="text" name="ourPrice" th:value="${book.ourPrice}">
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Number in stock :</label> <input
-					type="text" name="inStockNumber" th:value="${book.inStockNumber}" required>
+					type="text" name="inStockNumber" th:value="${book.inStockNumber}">
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Status :</label> <input
@@ -100,7 +102,7 @@
 
 			<div class="form-group">
 				<label class="control-label col-sm-2">Description :</label> <input
-					type="text" name="description" th:value="${book.description}" required>
+					type="text" name="description" th:value="${book.description}">
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2">Upload book image:</label> <input

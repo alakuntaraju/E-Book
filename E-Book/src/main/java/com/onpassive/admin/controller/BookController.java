@@ -6,7 +6,13 @@ import java.io.FileOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -111,4 +117,14 @@ public class BookController {
 		return book;
 
 	}
+	@GetMapping("/download")
+	  public ResponseEntity<Resource> getFile() {
+	    String filename = "books.xlsx";
+	    InputStreamResource file = new InputStreamResource(bookservice.load());
+
+	    return ResponseEntity.ok()
+	        .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename)
+	        .contentType(MediaType.parseMediaType("application/vnd.ms-excel"))
+	        .body(file);
+	  }
 }

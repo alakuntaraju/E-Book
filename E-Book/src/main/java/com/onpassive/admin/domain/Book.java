@@ -6,17 +6,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import javax.validation.constraints.Size;
 
 import org.springframework.web.multipart.MultipartFile;
+
+import com.sun.istack.NotNull;
+
 @Entity
 public class Book {
-	
+
 	@Id
+	
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BOOK_SEQ")
 //	@SequenceGenerator(sequenceName = "book_seq", allocationSize = 1, name = "Book_SEQ")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Size(min=3, max=10)
 	private String title;
+	@NotNull
+	@Size(min=4,message="auther name should be atleast 4 charecters")
 	private String author;
 	private String category;
 	private String publisher;
@@ -188,7 +197,5 @@ public class Book {
 //		public void setBookToCartItemList(List<BookToCartItem> bookToCartItemList) {
 //			this.bookToCartItemList = bookToCartItemList;
 //		}
-
-	
 
 }
