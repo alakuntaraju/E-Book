@@ -1,20 +1,19 @@
 package com.onpassive.admin;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import com.onpassive.admin.mail.Email;
 
 @SpringBootApplication
-@EnableSwagger2
 public class EBookApplication {
 	
 //	private static final Logger LOGGER=LoggerFactory.getLogger(EBookApplication.class);
+	
+//	@Autowired
+//	   private static EmailService emailService;
 
 	public static void main(String[] args) {
 //		LOGGER.debug("main method start");
@@ -22,11 +21,12 @@ public class EBookApplication {
 //		LOGGER.debug("main method end");
 	}
 	
-	@Bean
-	public Docket productApi() {
-	return new Docket(DocumentationType.SWAGGER_2).select()
-	.apis(RequestHandlerSelectors.basePackage("com.onpassive.admin"
-	)).build();
-	}
-
-}
+//	Email email = new Email();
+//    email.setFrom("from-mail1@gmail.com");
+//    email.setTo("to-mail2@mgmail.com");
+//    email.setSubject("This is a test mail");
+//    email.setMessageText("This is a sample text message.");
+//    emailService.sendMailWithAttachment(email,
+//       "./samplepic.jpg");
+ }
+	

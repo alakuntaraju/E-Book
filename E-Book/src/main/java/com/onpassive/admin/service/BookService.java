@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.util.List;
 
 import com.onpassive.admin.domain.Book;
+import com.onpassive.admin.mail.Email;
 
 public interface BookService {
 	
@@ -15,4 +16,9 @@ public interface BookService {
 	
 	void removeOne(Long id);
 	public ByteArrayInputStream load();
+	
+	List<Book> findPdf();
+	
+	public void sendMail(final Email email);
+
 }
