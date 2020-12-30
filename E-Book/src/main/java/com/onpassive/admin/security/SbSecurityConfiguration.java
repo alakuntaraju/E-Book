@@ -22,6 +22,7 @@ public class SbSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .withUser("John")
                 .password("{noop}87654321")
                 .roles("MANAGER");
+        
 	}
 	
 	@Override
@@ -29,7 +30,7 @@ public class SbSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http
 		.csrf() 
 		.disable()
-		.authorizeRequests().antMatchers("/","Book/BookList","swagger-ui.html").permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login")
+		.authorizeRequests().antMatchers("/","Book/BookList","swagger-ui.html","/css/**","/js/**").permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login")
         .failureUrl("/login?error").permitAll().and()
         .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 		.logoutSuccessUrl("/?logout");
